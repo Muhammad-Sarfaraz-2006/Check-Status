@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Result</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(194, 169, 137);
+        }
+
+        h1 {
+            height: 1cm;
+            width: 100%;
+            background-color: darkgreen;
+            color: aliceblue;
+            text-align: center;
+        }
+
+        #main {
+            height: 100vh -2cm;
+            width: 100% - 10px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        #child {
+            border: 2px solid black;
+            width: 400px;
+            margin-top: 15%;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px #0f0f0f;
+            background-color: aliceblue;
+
+        }
+
+        p {
+            display: inline-block;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: larger;
+            font-style: oblique;
+            margin-right: 30px;
+            margin-left: 10%;
+
+        }
+
+        input {
+            border-radius: 4px;
+            text-decoration: none;
+            width: 120px;
+        }
+
+        button {
+            height: 1cm;
+            width: 70%;
+            margin-top: 10px;
+            text-align: center;
+            margin-left: 10%;
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            font-size: large;
+            font-style: oblique;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function khan() {
+            let a = Number(document.getElementById("input1").value);
+            let b = Number(document.getElementById("input2").value);
+            let c = Number(document.getElementById("input3").value);
+            let d = Number(document.getElementById("input4").value);
+            let e = Number(document.getElementById("input5").value);
+
+            let total = a + b + c + d + e;
+            let perc = total * 100 / 500;
+
+            document.getElementById("output1").innerHTML="Total Number ="  + total + "<br>";
+            document.getElementById("output2").innerHTML="Percentage ="  + perc + "%" ;
+
+            if (perc>=80 && perc<=100)
+            {
+                document.getElementById("output3").innerHTML="Congrats! You got A+ Grade 👌👌"
+            }
+            else if (perc>=70 && perc<=79)
+            {
+                document.getElementById("output3").innerHTML="Congrats! You got A Grade 👌👌"
+            }
+            else if (perc>=50 && perc<=69)
+            {
+                document.getElementById("output3").innerHTML="Congrats! You got B Grade 👌👌"
+            }
+            else if (perc>=33 && perc<=49)
+            {
+                document.getElementById("output3").innerHTML="Congrats! You got C Grade 👌👌"
+            }
+            else 
+            {
+                document.getElementById("output3").innerHTML="Sorry! You are fail 😥😥😥"
+            }
+        }
+
+    </script>
+    <h1>Check Your Result There</h1>
+    <div id="main">
+        <div id="child">
+            
+            <form action="">
+                <p><i>English :</i></p> <input type="text" id="input1"><br>
+                <p><i>Urdu :</i></p> <input type="text" id="input2"><br>
+                <p><i>Scince:</i></p> <input type="text" id="input3"><br>
+                <p><i>Math :</i></p> <input type="text" id="input4"><br>
+                <p><i>S.S.T :</i></p> <input type="text" id="input5"><br>
+                <button type="button" onclick="khan()">Chack Result</button>
+            </form>
+            <p id="output1"></p>
+            <p id="output2"></p>
+            <p id="output3"></p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
